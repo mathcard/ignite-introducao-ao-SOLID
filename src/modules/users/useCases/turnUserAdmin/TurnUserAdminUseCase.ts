@@ -12,7 +12,7 @@ class TurnUserAdminUseCase {
     const userAlreadyExists = this.usersRepository.findById(user_id);
     
     if(!userAlreadyExists) {
-      throw new Error('User Alread Registered')
+      throw new Error('User not exist, please send id valid');
     }
 
     const user = this.usersRepository.turnAdmin(userAlreadyExists);
